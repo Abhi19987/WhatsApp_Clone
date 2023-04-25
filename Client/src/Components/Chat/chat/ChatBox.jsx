@@ -1,17 +1,18 @@
-import { Box, styled } from "@mui/material";
+import { Box } from "@mui/material";
 import ChatHeader from "./ChatHeader";
 import Messages from "./Messages";
+import { useContext } from "react";
+import { AccountContext } from "../../../context/AccountProvider";
 
+const ChatBox = () => {
+  const { person } = useContext(AccountContext);
 
-
-const ChatBox=()=>{
-    return (
-        <Box>
-            <ChatHeader/>
-            <Messages/>
-            This is ChatBox
-        </Box>
-    )
-}
+  return (
+    <Box>
+      <ChatHeader person={person} />
+      <Messages person={person} />
+    </Box>
+  );
+};
 
 export default ChatBox;

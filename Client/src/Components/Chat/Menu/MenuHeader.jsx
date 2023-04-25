@@ -8,6 +8,7 @@ const Component = styled(Box)`
   display: flex;
   background: #ededed;
   padding: 8px 16px;
+  height: 44px;
 `;
 
 const Wrapper = styled(Box)`

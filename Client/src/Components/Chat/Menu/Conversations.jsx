@@ -29,7 +29,7 @@ const Conversations = () => {
     <Component>
       {users.map(
         (item) =>
-          item.name != account && (
+          item.name !== account && (
             <>
               <Conversation user={item} />
               <Divider />
