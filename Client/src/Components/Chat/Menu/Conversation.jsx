@@ -15,7 +15,7 @@ const Conversation = ({ user }) => {
 
   const getUsers = async () => {
     setPerson(user);
-    await setConversation({ senderId: account.id, receiverId: user.id });
+    await setConversation({ senderId: account, receiverId: user.name });
   };
 
   return (

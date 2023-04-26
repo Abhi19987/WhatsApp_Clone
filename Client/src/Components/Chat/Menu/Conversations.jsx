@@ -11,7 +11,7 @@ const Component = styled(Box)`
   overflow: overlay;
 `;
 
-const Conversations = () => {
+const Conversations = ({ text }) => {
   const { account } = useContext(AccountContext);
 
   const [users, setUsers] = useState([]);
@@ -19,11 +19,14 @@ const Conversations = () => {
   useEffect(() => {
     const fetchData = async () => {
       let resp = await getUsers();
-      setUsers(resp);
+      const filteredUser = resp.filter((user) =>
+        user.name.toLowerCase().includes(text.toLowerCase())
+      );
+      setUsers(filteredUser);
     };
 
     fetchData();
-  }, []);
+  }, [text]);
 
   return (
     <Component>
